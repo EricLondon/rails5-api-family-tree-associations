@@ -1,24 +1,42 @@
-# README
+# Rail 5 API Family Tree Associations
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+# setup
+rake db:create && rake db:migrate
+rake people:create
 
-Things you may want to cover:
+# create people
+rake people:create
 
-* Ruby version
+# run server (puma)
+rails s
 
-* System dependencies
+# curl request
+curl -XGET 'http://localhost:3000/api/people' | jq '.[0]'
+{
+  "id": 1,
+  "first_name": "Eric",
+  "last_name": "London",
+  "maiden_name": null,
+  "gender": "male",
+  "depth": 0,
+  "spouse_id": 2,
+  "mother_id": 3,
+  "father_id": 4,
+  "children_ids": [
+    5,
+    6,
+    7
+  ],
+  "sibling_ids": [
+    8,
+    9
+  ]
+}
 
-* Configuration
+# run RSpec tests
+rspec
+35 examples, 0 failures
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Disclaimer: Sorry, relationships are binary and simplified in this example code.
