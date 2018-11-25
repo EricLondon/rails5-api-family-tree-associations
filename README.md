@@ -40,3 +40,6 @@ rspec
 ```
 
 Disclaimer: Sorry, relationships are binary and simplified in this example code.
+
+TODO:
+- [ ] resolve N+1 issues when fetching siblings and children associations
